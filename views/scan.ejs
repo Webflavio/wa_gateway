@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure QR Code</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gradient-to-r from-blue-100 to-purple-100 min-h-screen flex items-center justify-center">
+    <div id="loginForm" class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+        <h1 class="text-2xl font-bold mb-6 text-center text-gray-800">Enter Password</h1>
+        <input type="password" id="password" class="w-full p-2 mb-4 border rounded" placeholder="Password">
+        <button onclick="authenticate()" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition duration-300">Submit</button>
+    </div>
+
+    <div id="qrContainer" class="hidden bg-white p-8 rounded-lg shadow-md text-center">
+        <h2 class="text-2xl font-bold mb-6 text-gray-800">QR Code</h2>
+        <div id="qrcode" class="mb-4"></div>
+        <button onclick="logout()" class="bg-red-500 text-white p-2 rounded hover:bg-red-600 transition duration-300">Logout</button>
+    </div>
+
+    <script>
+        function authenticate() {
+            const password = document.getElementById('password').value;
+            if (password === 'flaviome') {
+                document.getElementById('loginForm').classList.add('hidden');
+                document.getElementById('qrContainer').classList.remove('hidden');
+                loadQR();
+            } else {
+                alert('Incorrect password');
+            }
+        }
+
+        function loadQR() {
+            let qr = '<%= qr %>';
+            let image = new Image();
+            image.src = qr;
+            image.classList.add('mx-auto');
+            document.getElementById('qrcode').appendChild(image);
+        }
+
+        function logout() {
+            document.getElementById('qrContainer').classList.add('hidden');
+            document.getElementById('loginForm').classList.remove('hidden');
+            document.getElementById('password').value = '';
+            document.getElementById('qrcode').innerHTML = '';
+        }
+    </script>
+</body>
+</html>
