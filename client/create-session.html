@@ -5,7 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>إنشاء جلسة</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </head>
 <body class="bg-gradient-to-r from-blue-100 to-purple-100 min-h-screen flex flex-col justify-center items-center font-sans text-gray-800">
     <div class="bg-white bg-opacity-80 backdrop-filter backdrop-blur-lg rounded-3xl p-8 shadow-2xl max-w-md w-full animate__animated animate__fadeIn">
@@ -36,7 +38,12 @@
             try {
                 const response = await fetch(`/start-session?session=${sessionName}&scan=true`);
                 if (response.ok) {
-                    alert('تم إنشاء الجلسة بنجاح');
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'تم إنشاء الجلسة بنجاح',
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
                     setTimeout(() => {
                         window.location.href = `/start-session?session=${sessionName}&scan=true`;
                     }, 3000);
@@ -44,7 +51,11 @@
                     throw new Error('Failed to create session');
                 }
             } catch (error) {
-                alert('حدث خطأ أثناء إنشاء الجلسة: ' + error.message);
+                Swal.fire({
+                    icon: 'error',
+                    title: 'خطأ',
+                    text: 'حدث خطأ أثناء إنشاء الجلسة: ' + error.message
+                });
             }
         });
     </script>
