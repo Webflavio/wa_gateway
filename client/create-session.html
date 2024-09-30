@@ -38,7 +38,7 @@
                 if (response.ok) {
                     alert('تم إنشاء الجلسة بنجاح');
                     setTimeout(() => {
-                        window.location.href = `/populate-code?session=${sessionName}`;
+                        window.location.href = `/start-session?session=${sessionName}&scan=true`;
                     }, 3000);
                 } else {
                     throw new Error('Failed to create session');
