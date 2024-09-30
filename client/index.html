@@ -8,24 +8,18 @@
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
-<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen flex flex-col justify-between items-center font-['Tajawal']">
-    <div class="bg-white bg-opacity-80 backdrop-blur-lg rounded-3xl p-8 shadow-2xl max-w-2xl w-11/12 text-center mt-20">
-        <h1 class="text-4xl font-bold mb-8 text-indigo-800 animate__animated animate__fadeIn">الصفحة الرئيسية</h1>
+<body class="bg-gradient-to-br from-blue-100 to-indigo-100 min-h-screen flex flex-col justify-center items-center p-4 font-['Tajawal']">
+    <div class="bg-white bg-opacity-80 backdrop-filter backdrop-blur-lg rounded-3xl shadow-2xl p-8 text-center max-w-2xl w-full animate__animated animate__fadeIn">
+        <h1 class="text-4xl font-bold mb-8 text-indigo-800">الصفحة الرئيسية</h1>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <a href="/create-session" class="btn animate__animated animate__fadeInUp">إنشاء جلسة</a>
-            <a href="/send-ma" class="btn animate__animated animate__fadeInUp animate__delay-1s">إرسال رسالة</a>
+            <a href="/create-session" class="bg-indigo-600 text-white py-3 px-6 rounded-lg text-lg font-semibold transition duration-300 ease-in-out hover:bg-indigo-700 hover:shadow-lg transform hover:-translate-y-1">إنشاء جلسة</a>
+            <a href="/send-ma" class="bg-indigo-600 text-white py-3 px-6 rounded-lg text-lg font-semibold transition duration-300 ease-in-out hover:bg-indigo-700 hover:shadow-lg transform hover:-translate-y-1">إرسال رسالة</a>
         </div>
     </div>
 
-    <footer class="p-4 bg-white bg-opacity-80 backdrop-blur-lg w-full text-center">
-        <p class="text-gray-600">حقوق الملكية للمبرمج moflavio</p>
+    <footer class="p-4 bg-white bg-opacity-80 backdrop-filter backdrop-blur-lg w-full text-center text-gray-600">
+        <p>حقوق الملكية للمبرمج moflavio</p>
         <a href="https://wa.me/+201229607974" target="_blank" class="text-indigo-600 hover:text-indigo-800 transition">تواصل معنا عبر واتساب</a>
     </footer>
-
-    <style>
-        .btn {
-            @apply bg-indigo-600 text-white py-3 px-6 rounded-lg text-lg font-semibold transition duration-300 ease-in-out hover:bg-indigo-700 hover:shadow-lg transform hover:-translate-y-1;
-        }
-    </style>
 </body>
 </html>
