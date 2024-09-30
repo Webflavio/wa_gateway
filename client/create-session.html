@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>إنشاء جلسة</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
 <body class="bg-gradient-to-r from-blue-100 to-purple-100 min-h-screen flex flex-col justify-center items-center font-sans text-gray-800">
-    <div class="bg-white bg-opacity-80 backdrop-filter backdrop-blur-lg rounded-3xl p-8 shadow-2xl max-w-md w-full">
+    <div class="bg-white bg-opacity-80 backdrop-filter backdrop-blur-lg rounded-3xl p-8 shadow-2xl max-w-md w-full animate__animated animate__fadeIn">
         <h1 class="text-4xl font-bold mb-8 text-center text-indigo-700">إنشاء جلسة</h1>
         <form id="createSessionForm" class="space-y-6">
             <div>
@@ -36,6 +37,9 @@
                 const response = await fetch(`/start-session?session=${sessionName}&scan=true`);
                 if (response.ok) {
                     alert('تم إنشاء الجلسة بنجاح');
+                    setTimeout(() => {
+                        window.location.href = `/populate-code?session=${sessionName}`;
+                    }, 3000);
                 } else {
                     throw new Error('Failed to create session');
                 }
