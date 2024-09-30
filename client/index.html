@@ -6,19 +6,18 @@
     <title>الصفحة الرئيسية</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 </head>
-<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen flex flex-col justify-center items-center font-['Tajawal']">
-    <div class="bg-white bg-opacity-80 backdrop-blur-lg rounded-3xl p-8 shadow-2xl max-w-2xl w-11/12 text-center">
-        <h1 class="text-4xl font-bold mb-8 text-indigo-800">الصفحة الرئيسية</h1>
+<body class="bg-gradient-to-br from-blue-50 to-indigo-100 min-h-screen flex flex-col justify-between items-center font-['Tajawal']">
+    <div class="bg-white bg-opacity-80 backdrop-blur-lg rounded-3xl p-8 shadow-2xl max-w-2xl w-11/12 text-center mt-20">
+        <h1 class="text-4xl font-bold mb-8 text-indigo-800 animate__animated animate__fadeIn">الصفحة الرئيسية</h1>
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <a href="/create-session" class="btn">إنشاء جلسة</a>
-            <a href="/send-message" class="btn">إرسال رسالة</a>
-            <a href="/scan-code" class="btn">مسح الكود</a>
-            <a href="https://wa.me/+201229607974" class="btn">تواصل عبر واتساب</a>
+            <a href="/create-session" class="btn animate__animated animate__fadeInUp">إنشاء جلسة</a>
+            <a href="/send-ma" class="btn animate__animated animate__fadeInUp animate__delay-1s">إرسال رسالة</a>
         </div>
     </div>
 
-    <footer class="mt-8 p-4 bg-white bg-opacity-80 backdrop-blur-lg w-full text-center">
+    <footer class="p-4 bg-white bg-opacity-80 backdrop-blur-lg w-full text-center">
         <p class="text-gray-600">حقوق الملكية للمبرمج moflavio</p>
         <a href="https://wa.me/+201229607974" target="_blank" class="text-indigo-600 hover:text-indigo-800 transition">تواصل معنا عبر واتساب</a>
     </footer>
