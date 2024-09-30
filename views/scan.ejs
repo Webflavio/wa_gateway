@@ -1,33 +1,38 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Secure QR Code</title>
+    <title>رمز الاستجابة السريعة الآمن</title>
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
-<body class="bg-gradient-to-r from-blue-100 to-purple-100 min-h-screen flex items-center justify-center">
-    <div id="loginForm" class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
-        <h1 class="text-2xl font-bold mb-6 text-center text-gray-800">Enter Password</h1>
-        <input type="password" id="password" class="w-full p-2 mb-4 border rounded" placeholder="Password">
-        <button onclick="authenticate()" class="w-full bg-blue-500 text-white p-2 rounded hover:bg-blue-600 transition duration-300">Submit</button>
+<body class="bg-gradient-to-r from-blue-100 to-indigo-100 min-h-screen flex items-center justify-center">
+    <div id="loginForm" class="bg-white bg-opacity-80 backdrop-filter backdrop-blur-lg rounded-3xl shadow-2xl p-8 w-full max-w-md animate__animated animate__fadeIn">
+        <h1 class="text-3xl font-bold mb-6 text-center text-indigo-700">أدخل كلمة المرور</h1>
+        <input type="password" id="password" class="w-full p-3 mb-4 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500" placeholder="كلمة المرور">
+        <button onclick="authenticate()" class="w-full bg-indigo-600 text-white p-3 rounded-md hover:bg-indigo-700 transition duration-300">تأكيد</button>
     </div>
 
-    <div id="qrContainer" class="hidden bg-white p-8 rounded-lg shadow-md text-center">
-        <h2 class="text-2xl font-bold mb-6 text-gray-800">QR Code</h2>
+    <div id="qrContainer" class="hidden bg-white bg-opacity-80 backdrop-filter backdrop-blur-lg rounded-3xl shadow-2xl p-8 text-center animate__animated animate__fadeIn">
+        <h2 class="text-3xl font-bold mb-6 text-indigo-700">رمز الاستجابة السريعة</h2>
         <div id="qrcode" class="mb-4"></div>
-        <button onclick="logout()" class="bg-red-500 text-white p-2 rounded hover:bg-red-600 transition duration-300">Logout</button>
+        <button onclick="logout()" class="bg-red-500 text-white p-3 rounded-md hover:bg-red-600 transition duration-300">تسجيل الخروج</button>
     </div>
 
     <script>
         function authenticate() {
             const password = document.getElementById('password').value;
-            if (password === 'flaviome') {
+            if (password === '8272inja3nqx') {
                 document.getElementById('loginForm').classList.add('hidden');
                 document.getElementById('qrContainer').classList.remove('hidden');
                 loadQR();
             } else {
-                alert('Incorrect password');
+                Swal.fire({
+                    icon: 'error',
+                    title: 'خطأ',
+                    text: 'كلمة المرور غير صحيحة'
+                });
             }
         }
 
